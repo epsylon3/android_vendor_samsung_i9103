@@ -46,6 +46,11 @@ PRODUCT_COPY_FILES += \
 	vendor/samsung/i9103/etc/wifi/bcm4330_sta.bin:system/etc/wifi/bcm4330_sta.bin \
 	vendor/samsung/i9103/etc/wifi/nvram_net.txt:system/etc/wifi/nvram_net.txt \
 
+# copy all nvrm axf firmware files to system/etc/firmware
+PRODUCT_COPY_FILES += \
+	vendor/samsung/i9103/etc/firmware/nvrm_avp.bin:system/etc/firmware/nvrm_avp.bin \
+	$(shell find vendor/samsung/i9103/etc/firmware -name '*.axf' -printf '%p:system/etc/firmware/%f ')
+
 # prebuilt apps (touchwiz dependant for the seek bar, so not usable yet)
 #PRODUCT_COPY_FILES += \
 #	vendor/samsung/i9103/app/FmRadio.apk:system/app/FmRadio.apk \

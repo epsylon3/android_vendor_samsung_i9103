@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# libs used as objects (libaudio generic sources are in device folder)
+# libs used as objects (samsung compatible sources are in device folder)
 PRODUCT_COPY_FILES += \
 #	vendor/samsung/i9103/lib/libaudio.so:obj/lib/libaudio.so \
 #	vendor/samsung/i9103/lib/libaudio.so:system/lib/libaudio.so \
@@ -20,8 +20,17 @@ PRODUCT_COPY_FILES += \
 #	vendor/samsung/i9103/lib/libaudiopolicy.so:system/lib/libaudiopolicy.so \
 
 PRODUCT_COPY_FILES += \
+	vendor/samsung/i9103/lib/libsec-ril.so:system/lib/libsec-ril.so \
+	vendor/samsung/i9103/lib/libsecril-client.so:system/lib/libsecril-client.so \
 	vendor/samsung/i9103/lib/libcamera.so:obj/lib/libcamera.so \
 	vendor/samsung/i9103/lib/libcamera.so:system/lib/libcamera.so \
+	vendor/samsung/i9103/lib/libseccamera.so:system/lib/libseccamera.so \
+	vendor/samsung/i9103/lib/libarccamera.so:system/lib/libarccamera.so \
+
+# note, to check : libseccameraadaptor.so requires a lot of samsung libs :
+#	libsecjpeginterface.so libsecjpegboard.so libsecjpegarcsoft.so libPanoraMax3.so
+#	libActionShot.so libhdr.so libcaps.so libexifa.so libjpega.so
+#	and their deps... wait the phone to make some tests on those
 
 # hw libs to do later from sources
 PRODUCT_COPY_FILES += \
@@ -29,15 +38,25 @@ PRODUCT_COPY_FILES += \
 	vendor/samsung/i9103/lib/hw/lights.n1.so:system/lib/hw/lights.n1.so \
 	vendor/samsung/i9103/lib/hw/gps.n1.so:system/lib/hw/gps.n1.so \
 	vendor/samsung/i9103/lib/hw/vendor-gps.n1.so:system/lib/hw/gps.n1.so \
-	vendor/samsung/i9103/lib/hw/gralloc.tegra.so:system/lib/hw/gralloc.tegra.so \
-	vendor/samsung/i9103/lib/hw/overlay.tegra.so:system/lib/hw/overlay.tegra.so
 
-# geforce egl
+# nvidia gl
 PRODUCT_COPY_FILES += \
-	vendor/samsung/i9103/lib/egl/egl.cfg:system/lib/egl/egl.cfg \
+	vendor/samsung/i9103/lib/hw/gralloc.tegra.so:system/lib/hw/gralloc.tegra.so \
 	vendor/samsung/i9103/lib/egl/libEGL_tegra.so:system/lib/egl/libEGL_tegra.so \
 	vendor/samsung/i9103/lib/egl/libGLESv1_CM_tegra.so:system/lib/egl/libGLESv1_CM_tegra.so \
-	vendor/samsung/i9103/lib/egl/libGLESv2_tegra.so:system/lib/egl/libGLESv2_tegra.so
+	vendor/samsung/i9103/lib/egl/libGLESv2_tegra.so:system/lib/egl/libGLESv2_tegra.so \
+	vendor/samsung/i9103/lib/libnvddk_2d.so:system/lib/libnvddk_2d.so \
+	vendor/samsung/i9103/lib/libnvddk_2d_v2.so:system/lib/libnvddk_2d_v2.so \
+	vendor/samsung/i9103/lib/libnvrm.so:system/lib/libnvrm.so \
+	vendor/samsung/i9103/lib/libnvrm_channel.so:system/lib/libnvrm_channel.so \
+	vendor/samsung/i9103/lib/libnvrm_graphics.so:system/lib/libnvrm_graphics.so \
+	vendor/samsung/i9103/lib/libnvos.so:system/lib/libnvos.so \
+	vendor/samsung/i9103/lib/libnvwsi.so:system/lib/libnvwsi.so \
+
+# nvidia video
+PRODUCT_COPY_FILES += \
+	vendor/samsung/i9103/lib/hw/overlay.tegra.so:system/lib/hw/overlay.tegra.so \
+	vendor/samsung/i9103/lib/libnvdispmgr_d.so:system/lib/libnvdispmgr_d.so \
 
 # wifi
 PRODUCT_COPY_FILES += \

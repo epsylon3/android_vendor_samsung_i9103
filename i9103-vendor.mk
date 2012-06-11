@@ -39,9 +39,17 @@ PRODUCT_COPY_FILES += \
 	vendor/samsung/i9103/lib/egl/libGLESv1_CM_tegra.so:system/lib/egl/libGLESv1_CM_tegra.so \
 	vendor/samsung/i9103/lib/egl/libGLESv2_tegra.so:system/lib/egl/libGLESv2_tegra.so
 
+# wifi
+PRODUCT_COPY_FILES += \
+	vendor/samsung/i9103/etc/wifi/BCM4330B1_002.001.003.0221.0265.hcd:system/etc/wifi/BCM4330B1_002.001.003.0221.0265.hcd \
+	vendor/samsung/i9103/etc/wifi/bcm4330_aps.bin:system/etc/wifi/bcm4330_aps.bin \
+	vendor/samsung/i9103/etc/wifi/bcm4330_sta.bin:system/etc/wifi/bcm4330_sta.bin \
+	vendor/samsung/i9103/etc/wifi/nvram_net.txt:system/etc/wifi/nvram_net.txt \
+
 # prebuilt apps (touchwiz dependant for the seek bar, so not usable yet)
 #PRODUCT_COPY_FILES += \
 #	vendor/samsung/i9103/app/FmRadio.apk:system/app/FmRadio.apk \
+#	vendor/samsung/i9103/app/twframework.jar:system/framework/twframework.jar \
 
 # extras
 #PRODUCT_COPY_FILES += \

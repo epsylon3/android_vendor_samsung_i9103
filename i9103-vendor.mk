@@ -12,15 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# libs used as objects
+# libs used as objects (libaudio generic sources are in device folder)
 PRODUCT_COPY_FILES += \
-	vendor/samsung/i9103/lib/libaudio.so:obj/lib/libaudio.so \
-	vendor/samsung/i9103/lib/libaudiopolicy.so:obj/lib/libaudiopolicy.so \
-	vendor/samsung/i9103/lib/libcamera.so:obj/lib/libcamera.so \
+#	vendor/samsung/i9103/lib/libaudio.so:obj/lib/libaudio.so \
+#	vendor/samsung/i9103/lib/libaudio.so:system/lib/libaudio.so \
+#	vendor/samsung/i9103/lib/libaudiopolicy.so:obj/lib/libaudiopolicy.so \
+#	vendor/samsung/i9103/lib/libaudiopolicy.so:system/lib/libaudiopolicy.so \
 
 PRODUCT_COPY_FILES += \
-	vendor/samsung/i9103/lib/libaudio.so:system/lib/libaudio.so \
-	vendor/samsung/i9103/lib/libaudiopolicy.so:system/lib/libaudiopolicy.so \
+	vendor/samsung/i9103/lib/libcamera.so:obj/lib/libcamera.so \
 	vendor/samsung/i9103/lib/libcamera.so:system/lib/libcamera.so \
 
 # hw libs to do later from sources
